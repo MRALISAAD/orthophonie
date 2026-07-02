@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-heading: "Nunito";
+  --font-body: "Inter";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #FAF7F2;
+  color: #2D3436;
+  font-family: var(--font-body), Inter, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  background: #F0E6D3;
+  color: #22557A;
+}
+
+.focus-ring {
+  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent;
+}
+
+.organic {
+  border-radius: 34% 66% 58% 42% / 43% 38% 62% 57%;
+}
+
+.speech-tail::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 28px;
+  width: 24px;
+  height: 24px;
+  background: inherit;
+  border-radius: 0 0 24px 0;
+  transform: rotate(45deg);
+}
