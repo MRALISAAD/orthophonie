@@ -1,10 +1,11 @@
 import PageHero from "@/components/PageHero";
 import InfoSection from "@/components/InfoSection";
 import CTASection from "@/components/CTASection";
+import FAQSection from "@/components/FAQSection";
 
 export const metadata = {
   title: "Suivi personnalisé — Aya Orthophonie",
-  description: "Un suivi orthophonique adapté au rythme, aux besoins et aux objectifs de l'enfant.",
+  description: "Un suivi orthophonique adapté au rythme, aux besoins et aux objectifs de l'enfant, de l'adolescent ou de l'adulte.",
   openGraph: { title: "Suivi personnalisé — Aya Orthophonie", description: "Un accompagnement progressif et ajusté." },
 };
 
@@ -14,8 +15,8 @@ export default function SuiviPage() {
       <PageHero
         label="Service"
         title="Suivi personnalisé"
-        text="Le suivi personnalisé accompagne l'enfant selon ses besoins, son rythme et ses objectifs."
-        cta="Planifier un premier échange"
+        text="Le suivi personnalisé accompagne chaque personne selon ses besoins, son rythme et ses objectifs."
+        cta="Nous contacter"
       />
       <section className="bg-white px-5 py-20 sm:px-8">
         <div className="mx-auto grid max-w-5xl gap-6">
@@ -23,7 +24,7 @@ export default function SuiviPage() {
             <p>Le suivi vise des objectifs précis et réalistes, construits à partir des besoins observés et réajustés au fil des progrès.</p>
           </InfoSection>
           <InfoSection title="Exemples de besoins accompagnés">
-            <p>Le travail peut concerner la compréhension, l'expression orale, la prononciation, la communication, les habiletés liées à la lecture ou à l'écriture.</p>
+            <p>Le travail peut concerner la compréhension, l'expression orale, la prononciation, la communication, la déglutition ou les habiletés liées à la lecture et à l'écriture.</p>
           </InfoSection>
           <InfoSection title="Rôle des parents" tone="sand">
             <p>Les parents sont associés au parcours. Ils reçoivent des repères et des pistes simples pour soutenir l'enfant dans les situations du quotidien.</p>
@@ -36,7 +37,8 @@ export default function SuiviPage() {
           </InfoSection>
         </div>
       </section>
-      <CTASection button="Planifier un premier échange" />
+      <section className="bg-cream px-5 py-20 sm:px-8"><div className="mx-auto max-w-5xl"><FAQSection items={[{ question: "Comment les objectifs sont-ils définis ?", answer: "Ils sont construits à partir de la demande, des besoins observés et des priorités de la personne, puis ajustés au fil du suivi." }, { question: "Les proches peuvent-ils être associés ?", answer: "Lorsque cela est pertinent et avec l'accord de la personne concernée, les proches peuvent recevoir des repères pour soutenir le quotidien." }]} /></div></section>
+      <CTASection button="Nous contacter" />
     </>
   );
 }

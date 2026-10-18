@@ -1,11 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 
-export default function ArticleCard({ category, title, excerpt, readTime, href }) {
+export default function ArticleCard({ category, title, excerpt, readTime, href, image, imageAlt }) {
   return (
     <article className="group overflow-hidden rounded-[28px] bg-white shadow-soft ring-1 ring-primary/8 transition duration-200 hover:-translate-y-1">
-      <div className="h-28 bg-pale-blue">
-        <div className="h-full w-full bg-[radial-gradient(circle_at_20%_20%,rgba(240,230,211,1),transparent_35%),linear-gradient(135deg,rgba(237,244,248,1),rgba(255,255,255,1)_50%,rgba(124,185,160,0.35))]" />
-      </div>
+      <div className="relative h-48 overflow-hidden bg-pale-blue">{image ? <Image src={image} alt={imageAlt} fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover transition duration-500 group-hover:scale-105" /> : null}</div>
       <div className="p-7">
         <div className="mb-4 flex flex-wrap items-center gap-3 text-xs font-extrabold uppercase tracking-[0.16em] text-accent">
           <span>{category}</span>

@@ -1,6 +1,6 @@
 import Button from "./Button";
 
-export default function CTASection({ title = "Un doute ne doit pas rester seul.", text = "Parlons-en avec douceur, clarté et professionnalisme.", button = "Prendre rendez-vous" }) {
+export default function CTASection({ title = "Un doute ne doit pas rester seul.", text = "Parlons-en avec douceur, clarté et professionnalisme.", button = "Nous contacter" }) {
   return (
     <section className="bg-primary px-5 py-20 text-white sm:px-8">
       <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[36px] bg-primary px-6 py-14 ring-1 ring-white/15 sm:px-10 lg:px-16">

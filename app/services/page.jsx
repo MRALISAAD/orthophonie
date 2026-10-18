@@ -15,9 +15,9 @@ export default function ServicesPage() {
     <>
       <PageHero
         label="Services"
-        title="Des services pour mieux comprendre et accompagner votre enfant"
-        text="Chaque accompagnement commence par une écoute attentive de votre situation, de vos questions et du rythme de votre enfant."
-        cta="Prendre rendez-vous"
+        title="Des services pour mieux comprendre et accompagner chaque parcours"
+        text="Chaque accompagnement commence par une écoute attentive de votre situation, de vos questions et des besoins de l'enfant, de l'adolescent ou de l'adulte concerné."
+        cta="Nous contacter"
       />
       <section className="bg-white px-5 py-20 sm:px-8">
         <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-2">

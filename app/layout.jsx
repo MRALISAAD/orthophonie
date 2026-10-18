@@ -16,13 +16,13 @@ const nunito = Nunito({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://ayaorthophonie.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
   title: {
     default: "Aya Orthophonie — Guidance et Langage",
     template: "%s",
   },
   description:
-    "Aya Orthophonie accompagne les parents avec des repères clairs sur le langage, la parole, la communication, la lecture et l'écriture.",
+    "Aya Orthophonie accompagne les enfants, les adolescents et les adultes autour du langage, de la parole, de la communication, de la lecture et de l'écriture.",
   openGraph: {
     title: "Aya Orthophonie — Guidance et Langage",
     description:
@@ -31,6 +31,8 @@ export const metadata = {
     locale: "fr_FR",
     siteName: "Aya Orthophonie",
   },
+  alternates: { canonical: "/" },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }) {

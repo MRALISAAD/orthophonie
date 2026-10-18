@@ -21,7 +21,7 @@ export default function Header() {
           ))}
         </nav>
         <div className="hidden lg:block">
-          <Button href="/contact">Prendre rendez-vous</Button>
+          <Button href="/contact">Nous contacter</Button>
         </div>
         <button
           type="button"
@@ -52,7 +52,7 @@ export default function Header() {
               </Link>
             ))}
             <Button href="/contact" className="mt-2 w-full" onClick={() => setOpen(false)}>
-              Prendre rendez-vous
+              Nous contacter
             </Button>
           </div>
         </nav>

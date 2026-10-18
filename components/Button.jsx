@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const styles = {
   primary:
-    "bg-accent text-white shadow-[0_14px_30px_rgba(234,118,75,0.25)] hover:-translate-y-0.5 hover:bg-accent/90",
+    "bg-accent text-white shadow-[0_14px_30px_rgba(234,118,75,0.25)] hover:-translate-y-0.5 hover:bg-accent/90 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0",
   secondary:
     "bg-white text-primary ring-1 ring-primary/15 hover:-translate-y-0.5 hover:bg-pale-blue",
   ghost:

@@ -5,7 +5,9 @@ import ServiceCard from "@/components/ServiceCard";
 import AgeMilestoneCard from "@/components/AgeMilestoneCard";
 import ArticleCard from "@/components/ArticleCard";
 import CTASection from "@/components/CTASection";
-import { articles, quickMilestones, services } from "@/data/site";
+import FAQSection from "@/components/FAQSection";
+import Image from "next/image";
+import { articles, faqs, interventionDomains, quickMilestones, services } from "@/data/site";
 
 export const metadata = {
   title: "Aya Orthophonie — Guidance et Langage",
@@ -26,31 +28,26 @@ export default function HomePage() {
               Orthophonie · Parents · Enfants
             </p>
             <h1 className="font-heading text-4xl font-black leading-[1.03] tracking-tight text-primary sm:text-5xl lg:text-7xl">
-              Vous avez un doute sur le langage de votre enfant ?
+              Un accompagnement autour du langage, à chaque âge
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-text-muted">
-              Aya Orthophonie vous aide à comprendre les signaux, poser les bonnes questions et avancer avec des repères simples.
+              Aya Orthophonie accompagne les enfants, les adolescents et les adultes autour du langage, de la communication et des apprentissages, avec des repères simples et une écoute attentive.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button href="/contact">Prendre rendez-vous</Button>
-              <Button href="/reperes" variant="secondary">Explorer les repères</Button>
+              <Button href="/services">Découvrir les services</Button>
+              <Button href="/contact" variant="secondary">Nous contacter</Button>
             </div>
             <p className="mt-6 font-semibold text-primary">Sans diagnostic en ligne. Sans jugement. Avec bienveillance.</p>
           </div>
-          <div className="relative min-h-[520px]">
-            <div className="organic absolute right-0 top-8 h-80 w-80 bg-pale-blue" />
-            <div className="organic absolute bottom-6 left-4 h-72 w-72 bg-sand" />
-            <div className="speech-tail absolute left-10 top-20 max-w-[260px] rounded-[30px] bg-primary p-6 text-white shadow-soft">
-              <div className="text-3xl">💬 👂</div>
-              <p className="mt-4 font-heading text-2xl font-black">Chaque enfant évolue à son rythme</p>
+          <div className="relative min-h-[420px] sm:min-h-[520px]">
+            <div className="organic absolute -right-6 top-4 h-80 w-80 bg-pale-blue sm:right-0" />
+            <div className="organic absolute bottom-0 left-0 h-64 w-64 bg-sand" />
+            <div className="absolute inset-x-6 top-8 h-[360px] overflow-hidden rounded-[38px] shadow-soft ring-8 ring-white sm:inset-x-10 sm:h-[440px]">
+              <Image src="/images/family-reading.jpg" alt="Parent et enfant partagent un moment de lecture" fill priority sizes="(max-width: 1024px) 90vw, 45vw" className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
+              <p className="absolute bottom-6 left-6 right-6 font-heading text-2xl font-black text-white sm:text-3xl">Écouter, comprendre et avancer ensemble.</p>
             </div>
-            <div className="absolute right-2 top-56 max-w-[280px] rounded-[30px] bg-white p-6 shadow-soft ring-1 ring-primary/8">
-              <div className="text-3xl">🌱 📚</div>
-              <p className="mt-4 font-heading text-2xl font-black text-primary">On observe, on comprend, on accompagne</p>
-            </div>
-            <div className="absolute bottom-10 left-20 rounded-full bg-soft-green px-6 py-4 font-extrabold text-white shadow-soft">
-              Guidance douce
-            </div>
+            <div className="absolute bottom-1 right-0 rounded-full bg-soft-green px-5 py-3 text-sm font-extrabold text-white shadow-soft sm:bottom-4 sm:right-2">Une approche humaine</div>
           </div>
         </div>
       </section>
@@ -74,6 +71,33 @@ export default function HomePage() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-pale-blue px-5 py-20 sm:px-8">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+          <div className="rounded-[36px] bg-primary p-8 text-white shadow-soft sm:p-10">
+            <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-white/70">À propos</p>
+            <h2 className="mt-4 font-heading text-3xl font-black leading-tight sm:text-4xl">Faites connaissance avec Aya</h2>
+            <p className="mt-5 leading-8 text-white/80">Orthophoniste, Aya Lakhsadi a étudié au Maroc et en Belgique et a évolué dans des environnements hospitaliers, associatifs et libéraux.</p>
+            <Button href="/a-propos" variant="light" className="mt-7">Découvrir son parcours</Button>
+          </div>
+          <div>
+            <SectionHeader title="Une approche personnalisée à chaque âge" text="Enfants, adolescents et adultes sont accueillis avec écoute, bienveillance et des objectifs adaptés à leur situation." />
+            <div className="mt-7 grid gap-4 sm:grid-cols-2">
+              {["Écoute de la demande", "Objectifs personnalisés", "Collaboration avec les proches", "Repères concrets"].map((item) => <div key={item} className="rounded-2xl bg-white p-5 font-heading font-black text-primary shadow-sm">{item}</div>)}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-5 py-20 sm:px-8">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeader eyebrow="Domaines d'intervention" title="Des réponses adaptées à chaque parcours" text="Les domaines d'intervention sont abordés avec prudence, dans une démarche personnalisée et collaborative." />
+          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {interventionDomains.slice(0, 6).map((domain) => <article key={domain.title} className="rounded-[26px] bg-cream p-6 ring-1 ring-primary/8"><div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-pale-blue font-heading font-black text-primary">{domain.icon}</div><h3 className="mt-5 font-heading text-xl font-black text-primary">{domain.title}</h3><p className="mt-3 leading-7 text-text-muted">{domain.text}</p></article>)}
+          </div>
+          <Button href="/a-propos" variant="secondary" className="mt-10">Voir tous les domaines</Button>
         </div>
       </section>
 
@@ -128,7 +152,7 @@ export default function HomePage() {
 
       <section className="bg-cream px-5 py-20 sm:px-8">
         <div className="mx-auto max-w-7xl">
-          <SectionHeader title="Ce qui rend Aya Orthophonie différent" />
+          <SectionHeader title="Un accompagnement pour chaque parcours" text="Enfants, adolescents et adultes peuvent être accompagnés avec une approche personnalisée, bienveillante et construite en collaboration avec les familles." />
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {[
               ["Clarté", "Des explications simples, sans jargon.", "🔍"],
@@ -146,6 +170,10 @@ export default function HomePage() {
             {articles.map((article) => <ArticleCard key={article.href} {...article} />)}
           </div>
         </div>
+      </section>
+
+      <section className="bg-cream px-5 py-20 sm:px-8">
+        <div className="mx-auto max-w-5xl"><FAQSection items={faqs.slice(0, 5)} /><div className="mt-8 text-center"><Button href="/contact" variant="secondary">Poser une question</Button></div></div>
       </section>
 
       <CTASection />
